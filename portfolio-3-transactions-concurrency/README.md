@@ -19,6 +19,7 @@ Placing an order takes four steps: create the order, add the order item, reduce 
 5. Concurrency (p3-5a-concurrency-waiting.png and p3-5b-concurrency-result.png): two sessions tried to reduce the stock of the same product at the same time. The second session waited until the first one committed. The final stock was 6, so both sales counted and neither was lost. The isolation level shown is read committed, which is the PostgreSQL default.
 
  Explanation
+ 
 This portfolio showed me that a transaction is what protects the data when something goes wrong halfway. The most useful moment was the failed order. When I tried to buy 100 items, PostgreSQL rejected it, and in Neon I had to click ROLLBACK before I could run anything else. After that, the stock and the order count were unchanged, so nothing half finished was saved.
 I also made mistakes along the way. I ran the order transaction more than once, so my order count was not what I expected, and my stock ended up at 2 after repeating the concurrency test several times. I fixed this by resetting the stock to a known number before each test and running each test once. For the concurrency test, I had to add a 60 second pause in the first tab before the second tab had time to show the waiting behaviour.
 One thing that surprised me was seeing order numbers skip. I learned that PostgreSQL does not reuse a number when a transaction fails or rolls back, so a gap in the numbers is normal.
