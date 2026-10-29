@@ -25,4 +25,3 @@ I also made mistakes along the way. I ran the order transaction more than once, 
 One thing that surprised me was seeing order numbers skip. I learned that PostgreSQL does not reuse a number when a transaction fails or rolls back, so a gap in the numbers is normal.
 ACID stands for atomicity, consistency, isolation and durability. Placing an order needs a transaction because it changes four tables, and a failure in the middle would leave an order with no payment or the wrong stock. With BEGIN and COMMIT, either all four changes are saved or none are. In the concurrency test, PostgreSQL locked the product row while the first session was updating it, so the second session had to wait. This stopped one sale from overwriting the other, and the final stock was correct.
 
-## Lessons learned[Write 2 or 3 sentences in your own words. For example, what surprised you, or what went wrong while testing and how you fixed it.]
