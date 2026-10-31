@@ -1,0 +1,8 @@
+[
+  {"product_id": 1, "name": "Tecno Spark 20", "category": "Electronics", "price": 135000, "stock_qty": 40, "attributes": {"brand": "Tecno", "ram_gb": 8, "storage_gb": 128, "colour": "Black"}},
+  {"product_id": 2, "name": "HP Pavilion Laptop", "category": "Electronics", "price": 520000, "stock_qty": 12, "attributes": {"brand": "HP", "ram_gb": 16, "storage_gb": 512, "screen_inch": 15.6}},
+  {"product_id": 3, "name": "Ankara Shirt", "category": "Fashion", "price": 18000, "stock_qty": 60, "attributes": {"size": "L", "colour": "Blue", "material": "Cotton"}},
+  {"product_id": 4, "name": "Ofada Rice 5kg", "category": "Groceries", "price": 14500, "stock_qty": 100, "attributes": {"weight_kg": 5, "origin": "Ogun", "organic": true}},
+  {"product_id": 5, "name": "Standing Fan", "category": "Home", "price": 42000, "stock_qty": 25, "attributes": {"brand": "Binatone", "speed_settings": 3, "warranty_months": 12}},
+  {"product_id": 6, "name": "Shea Butter 500g", "category": "Beauty", "price": 6500, "stock_qty": 80, "attributes": {"weight_g": 500, "scent": "Unscented", "organic": true}}
+]
