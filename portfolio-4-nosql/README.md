@@ -21,12 +21,15 @@ Orders: each order is one document that contains the customer details, the list 
 4. Total spent per customer, using an aggregation pipeline: customer 2 spent 520000 across 1 order and customer 1 spent 216500 across 2 orders (p4-7).
 
 Challenges faced
+
 My first insert failed with an "Unexpected token" error, because Atlas treated my whole list of products as one document. I fixed it by inserting the products one at a time. I checked that products showed 6 documents and orders showed 3, and inserted the data again into the right collections. This taught me to check the collection name and the document count after every insert.
 
 Why a document database suits this
+
 In MongoDB I could store each product with its own details inside the same document. The phone has RAM and storage, the shirt has size and material, and the rice has weight. In PostgreSQL I would need a lot of extra columns that stay empty for most products, or a separate table for every product type. The RAM query showed this well, because only the phone and the laptop came back and I did not have to do anything special for the other products. An order is also easier to read as one document, since the customer, the items, the payment and the delivery are all in one place instead of four tables.
 
 Trade-offs compared with PostgreSQL 
+
 The downside is that product names and customer details are copied into every order. If a product name changes, I would have to update many documents, while in PostgreSQL I change it once. I also saw in Portfolio 3 how transactions and CHECK constraints protected the stock and the payments. For money and stock I would still keep PostgreSQL, and use MongoDB for things like product catalogues where the data varies a lot.
 
 
