@@ -1,0 +1,16 @@
+Portfolio 4: MongoDB queries (database: naijamart, run in MongoDB Atlas)
+
+Query 1: all electronics (collection: products)
+{ "category": "Electronics" }
+
+Query 2: products with at least 8 GB RAM (collection: products)
+{ "attributes.ram_gb": { "$gte": 8 } }
+
+Query 3: all orders for customer 1 (collection: orders)
+{ "customer.customer_id": 1 }
+
+Query 4: total spent per customer (collection: orders, aggregation pipeline)
+[
+  { "$group": { "_id": "$customer.customer_id", "total_spent": { "$sum": "$payment.amount" }, "orders": { "$sum": 1 } } },
+  { "$sort": { "total_spent": -1 } }
+]
