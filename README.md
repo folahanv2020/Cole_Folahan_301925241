@@ -1,12 +1,12 @@
-Advanced Database Systems Portfolio (MIT 8103)
+Folahan Cole - MIT 8103
 
-Student: Cole Folahan Victor
+Student ID : 301925241
 
 Case study: 
 NaijaMart, a simulated online store based in Lagos selling electronics, fashion, groceries, home and beauty products.
 
 Tools: 
-PostgreSQL on Neon (portfolios 1 to 3 and 5), MongoDB on Atlas (portfolio 4).
+PostgreSQL on Neon, MongoDB on Atlas.
 
  Contents
  
